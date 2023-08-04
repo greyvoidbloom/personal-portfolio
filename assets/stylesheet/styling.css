@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 *{
     background-color: #5CDB95;
     color: black;
@@ -44,6 +45,8 @@ body{
     cursor: pointer;
 }    
 .top-item.navigation-links li a{
+    font-family: 'VT323', monospace;
+    font-size: 20px;
     text-decoration: none;
     box-shadow: inset 0 0 0 0 #557A46;
     color: #3E001F;
@@ -177,30 +180,96 @@ body{
     transform: scale(1.2);
     background-color: inherit;
 }
-/*----PROJECTS(!!!!!!!!!!!!!!!! THIS IS TO BE DONE!!!!!!!!!!!!!!!!)----*/
+/*----PROJECTS----*/
 .project-container{
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-columns: auto;
     background-color: rgb(245,245,245);
     padding: 20px 20px;
-    gap: 20px;
+    gap: 50px;
+    max-width: 100vw;
 }
 .project-item{
+    max-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: inherit;
 }
 .project-item.heading{
+    text-align: center;
     font-family: 'Oswald', sans-serif;
     font-size: 30px;
 }
-.project-item.temporarytext{
-    font-family: 'Roboto', sans-serif;
+.project-item.cards{
+
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: auto;
+    gap: 30px;
 }
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.project-card{
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    max-height: 300px;
+    background-color: inherit;
+    padding: 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.project-card:hover{
+    box-shadow: 0 16px 20px 0 rgba(0,0,0,0.2);
+}
+.project-card-item{
+    display: flex;
+    background-color: inherit;
+    justify-content: center;
+}
+.project-card-item.image{
+    grid-area: 1/1/-1/-2;
+}
+.project-card-item.image img{
+    background: none;
+    transition: transform 0.3s ease;
+}
+.project-card-item.image img:hover{
+    transform: scale(1.03);
+
+}
+.project-card-item.heading{
+    font-family: 'Oswald', sans-serif;
+    grid-area: 1/2/-3/-1;
+}
+.project-card-item.description{
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    grid-area: 2/2/-2/-2;
+}
+.project-card-item.description.hehe{
+    text-align: center;
+}
+.project-card-item.github-linkage{
+    justify-content: left;
+    grid-area:3/2/-1/-1;
+}
+.project-card-item.github-linkage a{
+    font-family: 'VT323', monospace;
+    text-decoration: none;
+    background-color: inherit;
+}
+.project-card-item.github-linkage a:hover{
+    color: rgb(18, 112, 112);
+}
 /* -----GET IN TOUCH-----*/
 .get-in-touch-container{
+    max-width: 100vw;
     padding: 20px 0px 50px 0px;
     display: grid;
     grid-template-rows: auto auto auto;
@@ -213,10 +282,10 @@ body{
     justify-content: center;
     align-items: center;
 }
-.get-in-touch-item.logo{
+.get-in-touch-item.logo img{
     transition: transform 0.3s ease;
 }
-.get-in-touch-item.logo:hover{
+.get-in-touch-item.logo img:hover{
     transform: scale(1.2);
 }
 .get-in-touch-item.heading{
@@ -235,16 +304,17 @@ body{
 
 }
 .get-in-touch-item.button-redirect a{
-    font-family: sans-serif;
+    font-family: 'VT323', monospace;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 25px;
-    font-size: 20px;
+    font-size: 25px;
     background-color: rgb(245,245,245);
     transition: transform 0.3s ease;
 }
 .get-in-touch-item.button-redirect a:hover{
-    transform: scale(1.2);
+    max-width: 100vw;
+    transform: scale(1.1);
 }
 /* ------FOOTER------ */
 #footer-part{
@@ -394,6 +464,57 @@ body{
     }
     .experience-item.experience-item.image-gallery img{
         height: 75px;
+    }
+    .project-card{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+        max-width: 500px;
+        max-height: 500px;
+        padding: 20px 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .project-card-item{
+        display: flex;
+        background-color: inherit;
+        justify-content: center; 
+        align-items: center;
+    }
+    .project-card-item.image{
+        justify-content: center;
+        grid-area: 2/1/3/-1;
+    }
+    .project-card-item.image img{
+        background: none;
+        transition: transform 0.3s ease;
+    }
+    .project-card-item.image img:hover{
+        transform: scale(1.03);
+    }
+    .project-card-item.heading{
+        font-family: 'Oswald', sans-serif;
+        grid-area: 1/1/2/-1;
+    }
+    .project-card-item.description{
+        font-family: 'Roboto', sans-serif;
+        text-align: left;
+        grid-area: 3/1/4/-1;
+    }
+    .project-card-item.github-linkage{
+        padding-top: 10px;
+        justify-content: center;
+        grid-area:4/1/-1/-1;
+    }
+    .get-in-touch-item.button-redirect a{
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        background-color: rgb(245,245,245);
+        transition: none;
+    }
+    .get-in-touch-item.button-redirect a:hover{
+        transform: scale(1);
     }
 
 
