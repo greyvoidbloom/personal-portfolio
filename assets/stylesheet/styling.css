@@ -204,9 +204,21 @@ body{
 }
 .project-item.cards{
 
-    display: inline-flex;
-    grid-template-rows: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+#portfolio-website.project-card{
+    grid-area: 1/1/2/2;
+}
+#supermarket-management-system.project-card{
+    grid-area: 1/2/2/-1;
+}
+#retro-portfolio.project-card{
+    grid-area: 2/1/-1/-1;
 }
 .project-card{
     border-radius: 25px;
@@ -235,6 +247,7 @@ body{
     grid-area: 1/1/-1/-2;
 }
 .project-card-item.image img{
+    border-radius: 10%;
     background: none;
     transition: transform 0.3s ease;
 }
